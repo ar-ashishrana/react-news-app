@@ -21,15 +21,16 @@ export const ContextProvider = ({children})=>{
     const [page, _setPage] = useState(1);
     const [newsData, _setNewsData] = useState([]);
     const [error, _setError] = useState('');
-    // 48ec0af7e8144ce9896a4cb12b56cbb6
-    // 07994821b3814252b570c1e4962bcd41
-    // 084289e218c14ee2a6cf857a871ff3ff
-
+    /* More api keys 
+        48ec0af7e8144ce9896a4cb12b56cbb6
+        07994821b3814252b570c1e4962bcd41
+        084289e218c14ee2a6cf857a871ff3ff
+    */
     const getNews = async () => {
         setLoading(true)
         try {
-            // const res = await fetch(`https://newsapi.org/v2/everything?q=${search}&pageSize=20&page=${page}&apiKey=${import.meta.env.VITE_API_API_KEY}`);
-            const res = await fetch(`https://newsapi.org/v2/everything?q=${search}&pageSize=20&page=${page}&apiKey=07994821b3814252b570c1e4962bcd41`);
+            const res = await fetch(`https://newsapi.org/v2/everything?q=${search}&pageSize=20&page=${page}&apiKey=${import.meta.env.VITE_API_API_KEY}`);
+            // const res = await fetch(`https://newsapi.org/v2/everything?q=${search}&pageSize=20&page=${page}&apiKey=07994821b3814252b570c1e4962bcd41`);
             const data = await res.json();
             _setNewsData(data.articles);
         } catch (error) {
@@ -50,7 +51,7 @@ export const ContextProvider = ({children})=>{
             setPage(1);
           }
           const res = await fetch(
-            `https://newsapi.org/v2/everything?q=${search}&pageSize=10&page=${page+1}&apiKey=07994821b3814252b570c1e4962bcd41`
+            `https://newsapi.org/v2/everything?q=${search}&pageSize=10&page=${page+1}&apiKey=${import.meta.env.VITE_API_API_KEY}`
           );
           const data = await res.json();
           console.log(data.status)

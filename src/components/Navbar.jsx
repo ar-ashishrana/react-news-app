@@ -1,19 +1,18 @@
-import React, { useEffect } from "react";
 import { NavLink, Link } from "react-router";
 import { useStateContext } from "../context/ContextProvider";
 
 const Navbar = () => {
     const { search, setSearch, newsData, getNews } = useStateContext();
 
-    const handleInput = (e) => {
-        setSearch(e.target.value);
-    }
+    // const handleInput = (e) => {
+    //     setSearch(e.target.value);
+    // }
 
-    const handleSearch =  () => {
-        console.log("Search button clicked with search term:", search);
-        getNews();
-        console.log("Result news data:", newsData);
-    }
+    // const handleSearch =  () => {
+    //     console.log("Search button clicked with search term:", search);
+    //     getNews();
+    //     console.log("Result news data:", newsData);
+    // }
     // useEffect(()=>{
     //     getNews();
     // },[handleSearch])
